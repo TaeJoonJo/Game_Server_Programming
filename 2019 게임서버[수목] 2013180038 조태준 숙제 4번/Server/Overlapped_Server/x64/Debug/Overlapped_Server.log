@@ -1,0 +1,7 @@
+﻿  Client.cpp
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Server\Overlapped_Server\Client.cpp(8): warning C4305: '초기화 중': 'int'에서 'BYTE'(으)로 잘립니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Server\Overlapped_Server\Client.cpp(8): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  server_main.cpp
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Server\Overlapped_Server\server_main.cpp(355): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다...
+  Overlapped_Server.vcxproj -> D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Server\x64\Debug\IOCP_Server.exe

@@ -3,7 +3,7 @@
 
 CClientInfo::CClientInfo()
 	: m_Socket(INVALID_SOCKET)
-	, m_Id(0), m_isRun(FALSE)
+	, m_Id(0xffff)
 	, m_CurSize(0), m_PreSize(0)
 {
 	memset(m_RecvBuf, 0x00, MAX_BUFFER);
@@ -13,12 +13,11 @@ CClientInfo::~CClientInfo()
 {
 }
 
-const BOOL CClientInfo::Initial(SOCKET& psocket)
+const bool CClientInfo::Initial(SOCKET& psocket)
 {
 	if (psocket == INVALID_SOCKET)
-		return FALSE;
+		return false;
 
-	m_isRun = TRUE;
 	// 소켓 연결, 버퍼 연결
 	m_Socket = psocket;
 	m_SocketInfo.wsaBuf.len = MAX_BUFFER;
@@ -27,7 +26,14 @@ const BOOL CClientInfo::Initial(SOCKET& psocket)
 	// 아이디 설정
 	m_Id = ID++;
 
-	return TRUE;
+	return true;
+}
+
+const bool CClientInfo::ClearIoBuffer()
+{
+	ZeroMemory(&m_SocketInfo, sizeof(SOCKETINFO));
+
+	return true;
 }
 
 
@@ -36,21 +42,22 @@ const BOOL CClientInfo::Initial(SOCKET& psocket)
 CChessClient::CChessClient()
 	: m_X(0), m_Y(0)
 {
+	m_ClientInfo = new CClientInfo;
 	memset(m_Name, 0x00, sizeof(m_Name));
 	memset(&m_ClientInfo, 0x00, sizeof(m_ClientInfo));
 }
 
 CChessClient::~CChessClient()
 {
-
+	delete m_ClientInfo;
 }
 
-const BOOL CChessClient::Initial(SOCKET& psocket)
+const bool CChessClient::Initial(SOCKET& psocket)
 {
-	if (this->m_ClientInfo.Initial(psocket) == FALSE)
-		return FALSE;
+	if (this->m_ClientInfo->Initial(psocket) == false)
+		return false;
 
-	int id = m_ClientInfo.GetId();
+	int id = m_ClientInfo->GetId();
 	float x = STARTX + (id * DEFAULTSIZE);
 	float y = -175.f;
 	if (id > 8)
@@ -62,55 +69,52 @@ const BOOL CChessClient::Initial(SOCKET& psocket)
 	m_X = x;
 	m_Y = y;
 
-	return TRUE;
+	m_bIsRun = true;
+	return true;
 }
 
 VOID CChessClient::Logout()
 {
-	m_ClientInfo.Logout();
+	m_ClientInfo->Logout();
 }
 
 const e_sc_PacketType CChessClient::ProcessPacket()
 {
-	cs_packet_base *buf = reinterpret_cast<cs_packet_base *>(m_ClientInfo.m_RecvBuf);
-	char *pbuf = reinterpret_cast<char *>(m_ClientInfo.m_RecvBuf);;
+	cs_packet_base *buf = reinterpret_cast<cs_packet_base *>(m_ClientInfo->m_RecvBuf);
+	char *pbuf = reinterpret_cast<char *>(m_ClientInfo->m_RecvBuf);;
 	
 	BYTE type = buf->type;
 	e_sc_PacketType escType;
 
 	switch (type)
 	{
-	case e_cs_PacketType::TryLogin:
-	{
-		escType = e_sc_PacketType::Login;
-	} break;
 	case e_cs_PacketType::Up:
 	{
-		m_Y += DEFAULTSIZE;
-		escType = e_sc_PacketType::Position;
+		if (m_Y > 0)					m_Y--;
+		escType = e_sc_PacketType::MovePlayer;
 	}break;
 	case e_cs_PacketType::Down:
 	{
-		m_Y -= DEFAULTSIZE;
-		escType = e_sc_PacketType::Position;
+		if (m_Y < WORLD_HEIGHT - 1)		m_Y++;
+		escType = e_sc_PacketType::MovePlayer;
 	} break;
 	case e_cs_PacketType::Left:
 	{
-		m_X -= DEFAULTSIZE;
-		escType = e_sc_PacketType::Position;
+		if (m_X > 0)					m_X--;
+		escType = e_sc_PacketType::MovePlayer;
 	} break;
 	case e_cs_PacketType::Right:
 	{
-		m_X += DEFAULTSIZE;
-		escType = e_sc_PacketType::Position;
+		if (m_X < (WORLD_HEIGHT - 1))	m_X++;
+		escType = e_sc_PacketType::MovePlayer;
 	} break;
 	case e_cs_PacketType::IDLE:
 	{
-		escType = e_sc_PacketType::Position;
-	}
+		escType = e_sc_PacketType::MovePlayer;
+	} break;
 	}
 
-	if (m_X < -(BOARDSIZE * 0.5f))
+	/*if (m_X < -(BOARDSIZE * 0.5f))
 	{
 		m_X += DEFAULTSIZE;
 	}
@@ -125,7 +129,7 @@ const e_sc_PacketType CChessClient::ProcessPacket()
 	if (m_Y > (BOARDSIZE * 0.5f))
 	{
 		m_Y -= DEFAULTSIZE;
-	}
+	}*/
 
 	return escType;
 }

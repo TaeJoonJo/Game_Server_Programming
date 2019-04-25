@@ -533,12 +533,12 @@ int Game_Main(void *parms)
 	g_pSprite->Begin(D3DXSPRITE_ALPHABLEND | D3DXSPRITE_SORT_TEXTURE);
 
 	// draw the background reactor image
-	for (int i = 0; i<10; ++i)
-		for (int j = 0; j<10; ++j)
+	for (int i = 0; i < 10; ++i)
+		for (int j = 0; j < 10; ++j)
 		{
 			int tile_x = i + g_left_x;
 			int tile_y = j + g_top_y;
-			if ((tile_x <0) || (tile_y<0)) continue;
+			if ((tile_x <0) || (tile_y < 0)) continue;
 			if (((tile_x >> 2) % 2) == ((tile_y >> 2) % 2))
 				Draw_Bitmap32(&white_tile, TILE_WIDTH * i + 7, TILE_WIDTH * j + 7);
 			else

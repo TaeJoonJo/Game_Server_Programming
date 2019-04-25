@@ -17,7 +17,6 @@ public:
 	~CClientInfo();
 public:
 	SOCKETINFO		m_SocketInfo;
-	BOOL			m_isRun;
 	UINT			m_CurSize;
 	UINT			m_PreSize;
 	char			m_RecvBuf[MAX_BUFFER];
@@ -25,13 +24,11 @@ public:
 private:
 	BYTE			m_Id;
 public:
-	const BOOL Initial(SOCKET& psocket);
+	const bool Initial(SOCKET& psocket);
+	const bool ClearIoBuffer();
 public:
-	inline VOID Login() {
-		m_isRun = TRUE;
-	}
 	inline VOID Logout() {
-		m_isRun = FALSE;	closesocket(m_Socket);
+		closesocket(m_Socket);
 	}
 	inline const BYTE GetId() {
 		return m_Id;
@@ -47,13 +44,15 @@ public:
 	CChessClient();
 	~CChessClient();
 public:
-	CClientInfo		m_ClientInfo;
+	CClientInfo		*m_ClientInfo;
+	bool			m_bIsRun;
 private:
 	TCHAR			m_Name[20];
 	float				m_X;
 	float				m_Y;
 public:
-	const BOOL Initial(SOCKET& psocket);
+	const bool Initial(SOCKET& psocket);
+	
 	// 패킷 처리 프로세스
 	const e_sc_PacketType ProcessPacket();
 	VOID Logout();
@@ -65,13 +64,10 @@ public:
 		return m_Y;
 	}
 	inline const BYTE GetID() {
-		return m_ClientInfo.GetId();
-	}
-	inline const BOOL isRun() {
-		return m_ClientInfo.m_isRun;
+		return m_ClientInfo->GetId();
 	}
 	inline const SOCKET& GetSocket(){
-		return m_ClientInfo.GetSocket();
+		return m_ClientInfo->GetSocket();
 	}
 };
 

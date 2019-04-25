@@ -1,0 +1,26 @@
+﻿  2DClient.cpp
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(95): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(96): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(100): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(101): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(118): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(119): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(122): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(123): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(541): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(542): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(560): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\2DClient.cpp(561): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  gpdumb1.cpp
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(767): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(768): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(810): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(811): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(812): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(813): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(837): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(838): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(839): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\2d_client\gpdumb1.cpp(840): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  2d_client.vcxproj -> D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 숙제 4번\Client\Debug\2d_client.exe

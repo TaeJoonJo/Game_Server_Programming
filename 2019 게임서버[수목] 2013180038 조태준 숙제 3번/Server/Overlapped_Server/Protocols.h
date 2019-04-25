@@ -27,16 +27,15 @@ struct SOCKETINFO
 
 typedef enum e_sc_PacketType
 {
-	Login,
+	Login_Ok,
 	Logout,
-	Position,
+	MovePlayer,
 	PutPlayer,
 	RemovePlayer
 }sc_PACKETTYPE;
 
 typedef enum e_cs_PacketType
 {
-	TryLogin,
 	Left,
 	Right,
 	Up,
@@ -47,10 +46,6 @@ typedef enum e_cs_PacketType
 #pragma pack(push, 1)
 // Client to Server
 struct cs_packet_base {
-	BYTE size;
-	BYTE type;
-};
-struct cs_packet_try_login {
 	BYTE size;
 	BYTE type;
 };
@@ -80,30 +75,27 @@ struct sc_packet_base {
 	BYTE size;
 	BYTE type;
 };
-struct sc_packet_login {
+struct sc_packet_login_ok {
 	BYTE size;
 	BYTE type;
-	BYTE numclient;
-	INT id;
-	float x;
-	float y;
+	BYTE id;
 };
 struct sc_packet_logout {
 	BYTE size;
 	BYTE type;
-	INT id;
+	BYTE id;
 };
-struct sc_packet_pos {
+struct sc_packet_move_player {
 	BYTE size;
 	BYTE type;
-	INT id;
+	BYTE id;
 	float x;
 	float y;
 };
 struct sc_packet_put_player {
 	BYTE size;
 	BYTE type;
-	INT id;
+	BYTE id;
 	//TCHAR name[20];			// 아직 사용안함
 	float x;
 	float y;
@@ -111,7 +103,7 @@ struct sc_packet_put_player {
 struct sc_packet_remove_player {
 	BYTE size;
 	BYTE type;
-	INT id;
+	BYTE id;
 };
 #pragma pack(pop)
 #endif // !__PROTOCOLS_H__
