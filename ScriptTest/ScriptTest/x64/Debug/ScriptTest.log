@@ -1,0 +1,4 @@
+﻿  Lua_Test.cpp
+D:\4_1\Game_Server_Programming\ScriptTest\ScriptTest\Lua_Test.cpp(43): warning C4101: 'error' :참조되지 않은 지역 변수입니다.
+D:\4_1\Game_Server_Programming\ScriptTest\ScriptTest\Lua_Test.cpp(42): warning C4101: 'buff' :참조되지 않은 지역 변수입니다.
+  ScriptTest.vcxproj -> D:\4_1\Game_Server_Programming\ScriptTest\x64\Debug\ScriptTest.exe

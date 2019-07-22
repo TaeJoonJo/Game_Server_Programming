@@ -1,0 +1,27 @@
+﻿  2DClient.cpp
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(410,28): warning C4244:  '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(412,27): warning C4244:  '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(442,28): warning C4244:  '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(443,27): warning C4244:  '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(586,44): warning C4244:  '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(1165,15): warning C4244:  '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(1166,15): warning C4244:  '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(1191,15): warning C4244:  '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ClientInfo.cpp
+  gpdumb1.cpp
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\2DClient.cpp(1192,15): warning C4244:  '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(768,20): warning C4244:  '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(769,20): warning C4244:  '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(811,32): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(812,26): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(813,25): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(814,31): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(838,32): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(839,26): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(840,25): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\2d_client\gpdumb1.cpp(841,31): warning C4244:  '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 285 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  2d_client.vcxproj -> D:\4_1\Game_Server_Programming\2019 게임서버[수목] 2013180038 조태준 텀프\Client\Release\2d_client.exe

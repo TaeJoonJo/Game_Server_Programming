@@ -47,7 +47,7 @@ char buffer[80];                // used to print text
 
 								// demo globals
 BOB			player;				// 플레이어 Unit
-//BOB			npc[MAX_NPC];      // NPC Unit
+BOB			npc[NUM_NPC];      // NPC Unit
 BOB         skelaton[MAX_USER];     // the other player skelaton
 
 BITMAP_IMAGE reactor;      // the background   
@@ -101,9 +101,9 @@ void ProcessPacket(char *ptr)
 			skelaton[id].attr |= BOB_ATTR_VISIBLE;
 		}
 		else {
-			//npc[id - NPC_START].x = my_packet->x;
-			//npc[id - NPC_START].y = my_packet->y;
-			//npc[id - NPC_START].attr |= BOB_ATTR_VISIBLE;
+			npc[id - MAX_USER].x = my_packet->x;
+			npc[id - MAX_USER].y = my_packet->y;
+			npc[id - MAX_USER].attr |= BOB_ATTR_VISIBLE;
 		}
 		break;
 	}
@@ -122,8 +122,8 @@ void ProcessPacket(char *ptr)
 			skelaton[other_id].y = my_packet->y;
 		}
 		else {
-			//npc[other_id - NPC_START].x = my_packet->x;
-			//npc[other_id - NPC_START].y = my_packet->y;
+			npc[other_id - MAX_USER].x = my_packet->x;
+			npc[other_id - MAX_USER].y = my_packet->y;
 		}
 		break;
 	}
@@ -139,7 +139,7 @@ void ProcessPacket(char *ptr)
 			skelaton[other_id].attr &= ~BOB_ATTR_VISIBLE;
 		}
 		else {
-	//		npc[other_id - NPC_START].attr &= ~BOB_ATTR_VISIBLE;
+			npc[other_id - MAX_USER].attr &= ~BOB_ATTR_VISIBLE;
 		}
 		break;
 	}
@@ -434,18 +434,18 @@ int Game_Init(void *parms)
 	}
 
 	// create skelaton bob
-	//for (int i = 0; i < MAX_NPC; ++i) {
-	//	if (!Create_BOB32(&npc[i], 0, 0, 64, 64, 1, BOB_ATTR_SINGLE_FRAME))
-	//		return(0);
-	//	Load_Frame_BOB32(&npc[i], UNIT_TEXTURE, 0, 4, 0, BITMAP_EXTRACT_MODE_CELL);
+	for (int i = 0; i < NUM_NPC; ++i) {
+		if (!Create_BOB32(&npc[i], 0, 0, 64, 64, 1, BOB_ATTR_SINGLE_FRAME))
+			return(0);
+		Load_Frame_BOB32(&npc[i], UNIT_TEXTURE, 0, 4, 0, BITMAP_EXTRACT_MODE_CELL);
 
-	//	// set up stating state of skelaton
-	//	Set_Animation_BOB32(&npc[i], 0);
-	//	Set_Anim_Speed_BOB32(&npc[i], 4);
-	//	Set_Vel_BOB32(&npc[i], 0, 0);
-	//	Set_Pos_BOB32(&npc[i], 0, 0);
-	//	// Set_ID(&npc[i], i);
-	//}
+		// set up stating state of skelaton
+		Set_Animation_BOB32(&npc[i], 0);
+		Set_Anim_Speed_BOB32(&npc[i], 4);
+		Set_Vel_BOB32(&npc[i], 0, 0);
+		Set_Pos_BOB32(&npc[i], 0, 0);
+		// Set_ID(&npc[i], i);
+	}
 
 
 
@@ -498,8 +498,8 @@ int Game_Shutdown(void *parms)
 
 	// kill skelaton
 	for (int i = 0; i < MAX_USER; ++i) Destroy_BOB32(&skelaton[i]);
-	//for (int i = 0; i < MAX_NPC; ++i)
-	//	Destroy_BOB32(&npc[i]);
+	for (int i = 0; i < NUM_NPC; ++i)
+		Destroy_BOB32(&npc[i]);
 
 	// shutdonw directdraw
 	DD_Shutdown();
@@ -553,7 +553,7 @@ int Game_Main(void *parms)
 	// draw the skelaton
 	Draw_BOB32(&player);
 	for (int i = 0; i<MAX_USER; ++i) Draw_BOB32(&skelaton[i]);
-	// for (int i = NPC_START; i<MAX_NPC; ++i) Draw_BOB32(&npc[i]);
+	for (int i = 0; i< NUM_NPC; ++i) Draw_BOB32(&npc[i]);
 
 	// draw some text
 	wchar_t text[300];
