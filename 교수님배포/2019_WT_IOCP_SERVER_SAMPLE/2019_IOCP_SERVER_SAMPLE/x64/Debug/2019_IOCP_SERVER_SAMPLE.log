@@ -1,0 +1,3 @@
+﻿  server_main.cpp
+D:\4_1\Game_Server_Programming\2019_WT_IOCP_SERVER_SAMPLE\2019_IOCP_SERVER_SAMPLE\server_main.cpp(436): warning C4101: 'flags' :참조되지 않은 지역 변수입니다.
+  2019_IOCP_SERVER_SAMPLE.vcxproj -> D:\4_1\Game_Server_Programming\2019_WT_IOCP_SERVER_SAMPLE\x64\Debug\2019_IOCP_SERVER_SAMPLE.exe
